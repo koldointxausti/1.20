@@ -8,7 +8,7 @@ public class TextScanner {
 		File adibide = new File("adibide.txt");
 		//if the file is not found the program will skip this and go to the catch
 		try {
-			//tell the Scanner class which text file we want
+		//tell the Scanner class which text file we want
 	        Scanner sc = new Scanner(adibide);
 	        //this is a loop that shows the document line by line until it's finished
 	        while(sc.hasNextLine()) {
