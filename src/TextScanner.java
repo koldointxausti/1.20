@@ -1,26 +1,26 @@
 import java.util.Scanner;
-import java.io.File;
-//we need to import this class also to have an answer if the file we want is not found
-import java.io.FileNotFoundException;
+import java.io.*;
 public class TextScanner {
-	public static void main (String[] args) {
-		//we create a new File class object
-		File adibide = new File("adibide.txt");
-		//if the file is not found the program will skip this and go to the catch
+	public static void main(String[] args){
 		try {
+		// Create an object that will use the name of document that first argument gives
+		File document = new File(args[0]);
+		// Define a scanner that is going to take information from the file
 		//tell the Scanner class which text file we want
-	        Scanner sc = new Scanner(adibide);
-	        //this is a loop that shows the document line by line until it's finished
-	        while(sc.hasNextLine()) {
-	        	String i = sc.nextLine();
-	            System.out.println(i);
-	        }
-	        sc.close();
-	    }
-		//in case the file it's not found it will print that message
-	    catch (FileNotFoundException e) {
-	        System.out.println("The file is not found.");
-	    }
+        Scanner sc = new Scanner(document);
+        //this is a loop that shows the document line by line until it's finished
+        while(sc.hasNextLine()) {
+        	String i = sc.nextLine();
+            System.out.println(i);
+		}
+        sc.close();
+		}
+			catch (FileNotFoundException e) {
+				System.out.println("You have to enter the path of one text file.");
+				System.out.println("You can try with the example I made: example.txt");
+			}
+		}	
+			
+		}
 		
-	}
-}
+	
